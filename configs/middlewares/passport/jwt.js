@@ -14,7 +14,7 @@ const JWT_STRATEGY_CONFIG = {
     issuer: config.issuer,
     audience: config.audience,
     passReqToCallback: false,
-    jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('jwt')
+    jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('JWT')
 };
 
 const _onJwtStrategyAuth = (payload, next) => {
