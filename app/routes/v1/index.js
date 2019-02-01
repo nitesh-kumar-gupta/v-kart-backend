@@ -15,8 +15,7 @@ module.exports = function() {
     configRoute(router, [
         require('./user.route'),
         require('./address.route'),
-        require('./admin.route'),
-        require('./imgur.route')
+        require('./admin.route')
     ]);
     return router;
 };
