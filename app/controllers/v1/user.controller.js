@@ -18,9 +18,6 @@ module.exports = {
         }
     },
     signin: async (req, res) => {
-        console.log('**************************');
-        console.log(req.headers);
-        console.log('**************************');
         passport.authenticate('local', { session: false }, (err, user) => {
             try {
                 if(err)
