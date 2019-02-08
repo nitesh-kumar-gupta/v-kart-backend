@@ -8,7 +8,9 @@ const helmet = require('helmet');
 require('dotenv').config({silent: true});
 const config = require('./../configs');
 const passport = require('passport');
-app.use(cookieParser())
+const cors = require('./../configs/middlewares/cors');
+app.use(cookieParser());
+app.use(cors);
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan('dev'));
