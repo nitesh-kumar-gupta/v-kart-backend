@@ -25,6 +25,11 @@ module.exports = Object.freeze({
         name: 'E_NOT_FOUND',
         err_message: 'Request not found.'
     },
+    E_USER_NOT_FOUND: {
+        code: 404,
+        name: 'E_USER_NOT_FOUND',
+        err_message: 'User not exist.'
+    },
     E_DUPLICATE_EMAIL: {
         code: 409,
         name: 'E_DUPLICATE_EMAIL',
