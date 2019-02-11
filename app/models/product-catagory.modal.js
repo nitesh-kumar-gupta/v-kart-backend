@@ -1,21 +1,19 @@
 'use strict';
 const mongoose = require('mongoose');
 const ProductCatagorySchema = mongoose.Schema({
-    parent_product_catagory: {
+    parent_product_catagory: [{
         type: mongoose.Schema.ObjectId,
         ref: 'ProductCatagory',
         default: null
-    },
+    }],
     name: {
         type: String,
         trim: true,
-        require: true,
-        default: ''
+        require: true
     },
     description: {
         type: String,
         trim: true,
-        require: true,
         default: ''
     },
     icon: {
