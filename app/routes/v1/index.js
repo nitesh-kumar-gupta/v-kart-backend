@@ -15,7 +15,8 @@ module.exports = function() {
     configRoute(router, [
         require('./user.route'),
         require('./address.route'),
-        require('./admin.route')
+        require('./admin.route'),
+        require('./category.route')
     ]);
     return router;
 };

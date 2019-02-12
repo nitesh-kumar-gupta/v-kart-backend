@@ -30,6 +30,11 @@ module.exports = Object.freeze({
         name: 'E_USER_NOT_FOUND',
         err_message: 'User not exist.'
     },
+    E_DUPLICATE_CATEGORY: {
+        code: 409,
+        name: 'E_DUPLICATE_CATEGORY',
+        err_message: 'Category already exist.'
+    },
     E_DUPLICATE_EMAIL: {
         code: 409,
         name: 'E_DUPLICATE_EMAIL',
