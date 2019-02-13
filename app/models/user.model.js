@@ -6,21 +6,20 @@ const userSchema = mongoose.Schema({
       name: {
           type: String,
           trim: true,
-          require: true,
-          default: ''
+          required: true
       },
       email: {
           type: String,
           trim: true,
-          require: true,
-          unique: true,
-          default: ''
+          required: true,
+          index: {
+              unique: true
+          }
       },
       password: {
           type: String,
           trim: true,
-          require: true,
-          default: ''
+          required: true
       },
       role: {
           type: String,
@@ -30,13 +29,15 @@ const userSchema = mongoose.Schema({
       country_code: {
           type: String,
           trim: true,
-          default: ''
+          default: '+91'
       },
       phone: {
           type: String,
           trim: true,
-          unique: true,
-          default: ''
+          index: {
+            unique: true
+          },
+          required: true
       },
       active: {
           type: Boolean,
@@ -71,6 +72,8 @@ userSchema.post('save', function(error, doc, next) {
             next(constant.errors.E_DUPLICATE_EMAIL);
         else if(error.errmsg.indexOf('phone') !== -1)
             next(constant.errors.E_DUPLICATE_PHONE);
+    } else if(error.name === 'ValidationError') {
+        next(constant.errors.E_ERROR);
     } else {
         next(error)
     }
