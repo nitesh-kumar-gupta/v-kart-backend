@@ -26,7 +26,6 @@ module.exports = {
         try {
             let instance = new ImageCloudService().getInstance(req.params.type);
             let imageCloud = await instance.create(req.body);
-            console.log('imageCloud: ', imageCloud);
             return response.success(res, constants.success.CREATED, imageCloud);
         } catch(err) {
             return response.error(res, err);

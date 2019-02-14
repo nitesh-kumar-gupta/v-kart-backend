@@ -5,13 +5,13 @@ const ProductSchema = mongoose.Schema({
     name: {
         type: String,
         trim: true,
-        require: true,
+        required: true,
         default: ''
     },
     description: {
         type: String,
         trim: true,
-        require: true,
+        required: true,
         default: ''
     },
     product_catagory: [{
@@ -27,7 +27,7 @@ const ProductSchema = mongoose.Schema({
     ],
     price: {
         type: Number,
-        require: true,
+        required: true,
         default: 0
     },
     discount: {
@@ -38,7 +38,7 @@ const ProductSchema = mongoose.Schema({
         },
         value: {
             type: Number,
-            require: true,
+            required: true,
             default: 0
         },
         name: {
@@ -49,7 +49,7 @@ const ProductSchema = mongoose.Schema({
     },
     quantity: {
         type: Number,
-        require: true,
+        required: true,
         default: 0
     },
     meta_data: [MetaData],

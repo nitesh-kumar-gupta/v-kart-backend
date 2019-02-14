@@ -11,7 +11,7 @@ const ProductCatagorySchema = mongoose.Schema({
         type: String,
         trim: true,
         unique: true,
-        require: true
+        required: true
     },
     description: {
         type: String,
@@ -34,7 +34,7 @@ const ProductCatagorySchema = mongoose.Schema({
 ProductCatagorySchema.post('save', function(error, doc, next) {
     if(error.name === 'MongoError' && error.code === 11000) {
         if(error.errmsg.indexOf('name') !== -1)
-            next(constant.errors.E_DUPLICATE_EMAIL);
+            next(constant.errors.E_DUPLICATE_CATEGORY);
     } else {
         next(error)
     }
