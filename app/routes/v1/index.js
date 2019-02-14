@@ -16,7 +16,8 @@ module.exports = function() {
         require('./user.route'),
         require('./address.route'),
         require('./admin.route'),
-        require('./category.route')
+        require('./category.route'),
+        require('./image-cloud.route')
     ]);
     return router;
 };
