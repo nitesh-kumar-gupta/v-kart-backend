@@ -1,28 +1,27 @@
 'use strict';
 const mongoose = require('mongoose');
 const ImageSchema = mongoose.Schema({
-    originalname: {
+    name: {
         type: String,
+        trim: true,
         default: ''
     },
-    filename: {
+    link: {
         type: String,
-        default: ''
+        required: true
     },
-    path: {
+    type: {
         type: String,
-        default: ''
-    },
-    mimetype: {
-        type: String,
+        trim: true,
         default: ''
     },
     size: {
         type: Number,
         default: 0
     },
-    encoding: {
+    account_id: {
         type: String,
+        trim: true,
         default: ''
     },
     deleted: {

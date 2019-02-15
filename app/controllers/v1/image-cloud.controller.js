@@ -3,8 +3,9 @@ const ImageCloudService = require('./../../services/image-cloud');
 const constants = require('./../../../configs/constants');
 const response = require('./../../response');
 module.exports = {
-    index: (req, res) => {
-        return response.success(res, constants.success.OK, {message: "imagecloud#index"});
+    index: async (req, res) => {
+        let imageCloud = await new ImageCloudService().getAllImageCloud();
+        return response.success(res, constants.success.OK, imageCloud);
     },
     getAuthLink: async (req, res) => {
         try {

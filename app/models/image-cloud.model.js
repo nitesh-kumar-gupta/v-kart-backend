@@ -26,7 +26,7 @@ const ImageCloudSchema = mongoose.Schema({
         enum: [null, 'IMGUR'],
         default: null
     },
-    isActive: {
+    active: {
         type: Boolean,
         default: true
     }

@@ -1,18 +1,20 @@
 'use strict';
 const constants = require('./../../../configs/constants');
 const response = require('./../../response');
-const ImageService = require('./../../services/image.service');
+const ImageCloudService = require('./../../services/image-cloud');
 module.exports = {
     index: (req, res) => {
         return response.success(res, constants.success.OK, {message: "Admin#index"});
     },
     uploadImage: async (req, res) => {
         try {
-            const imageService = new ImageService();
-            const image = await imageService.uploadImage(req.file);
+            let instance = new ImageCloudService().getInstance(req.params.type);
+            let image = await instance.uploadImage(req.file, req.params.cloudId);
             return response.success(res, constants.success.CREATED, image);
         } catch(err) {
-            console.log('err: err', err);
+            console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
+            console.log(err);
+            console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
             return response.error(res, err);
         }
     }
